@@ -5,9 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle, XCircle } from "lucide-react";
 import axios from "axios";
 
-const ApproveRejectProposals = () => {
-  const [proposals, setProposals] = useState([]);
-  const [comments, setComments] = useState({});
+
 
   useEffect(() => {
     fetchProposals();
