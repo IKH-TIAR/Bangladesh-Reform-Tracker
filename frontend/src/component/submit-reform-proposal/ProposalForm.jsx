@@ -31,6 +31,15 @@ const ProposalForm = () => {
     }
 
     // Temporary frontend-only submission
+    console.log('Form Data:', formData);
+    setSubmitted(true);
+    setFormData({
+      title: '',
+      description: '',
+      category: '',
+      targetCompletion: '',
+      documents: []
+    });
     
     setErrors({});
     
