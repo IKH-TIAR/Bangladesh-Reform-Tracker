@@ -1,27 +1,43 @@
+// server.js - Main server file
 const express = require('express');
 const cors = require('cors');
+const dotenv = require('dotenv');
 const connectDB = require('./config/db');
-require('dotenv').config();
+const userRoutes = require('./routes/userRoutes');
 
-// Create Express app
+// Load environment variables
+dotenv.config();
+
+// Initialize express app
 const app = express();
 
-// Connect to Database
+// Connect to MongoDB
 connectDB();
 
-// Middleware
+// Middlewares
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); // Parse JSON request body
 
-// Root route for API health check
+// Routes
+app.use('/api/users', userRoutes);
+
+// Basic route for testing
 app.get('/', (req, res) => {
   res.send('Bangladesh Citizen Signup API is running');
 });
 
-// Port configuration
-const PORT = process.env.PORT || 5000;
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({
+    success: false,
+    message: 'Server Error',
+    error: process.env.NODE_ENV === 'production' ? {} : err
+  });
+});
 
 // Start server
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
