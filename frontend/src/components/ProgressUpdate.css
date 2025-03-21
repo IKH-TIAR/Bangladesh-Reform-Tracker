@@ -1,0 +1,191 @@
+/* src/components/ProgressUpdate/ProgressUpdate.css */
+.progress-update-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .progress-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .header-icon {
+    font-size: 1.5rem;
+    color: #2c3e50;
+  }
+  
+  h2 {
+    color: #2c3e50;
+    margin: 0;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+    font-weight: 500;
+  }
+  
+  select, input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+  
+  select:focus, input:focus, textarea:focus {
+    outline: none;
+    border-color: #4299e1;
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .progress-input {
+    position: relative;
+  }
+  
+  .progress-input span {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #718096;
+  }
+  
+  .status-indicator {
+    padding: 0.75rem;
+    background: #f7fafc;
+    border-radius: 6px;
+    font-weight: 500;
+    color: #2c3e50;
+  }
+  
+  .update-button {
+    background: #4299e1;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.2s;
+  }
+  
+  .update-button:hover {
+    background: #3182ce;
+  }
+  
+  .status-message {
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .status-message.success {
+    background: #f0fff4;
+    color: #38a169;
+  }
+  
+  .status-message.error {
+    background: #fff5f5;
+    color: #e53e3e;
+  }
+  
+  .progress-list {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #edf2f7;
+  }
+  
+  .progress-bar {
+    height: 8px;
+    background: #edf2f7;
+    border-radius: 4px;
+    position: relative;
+  }
+  
+  .progress-bar div {
+    height: 100%;
+    background: #4299e1;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
+  
+  .progress-bar span {
+    position: absolute;
+    right: 0;
+    top: -20px;
+    font-size: 0.875rem;
+    color: #718096;
+  }
+  
+  .status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+  
+  .status-badge.In-Progress {
+    background: #fffaf0;
+    color: #dd6b20;
+  }
+  
+  .status-badge.Completed {
+    background: #f0fff4;
+    color: #38a169;
+  }
+  
+  .status-badge.Draft {
+    background: #f7fafc;
+    color: #718096;
+  }
+  
+  @media (max-width: 768px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+    
+    .progress-bar span {
+      display: none;
+    }
+  }
