@@ -1,9 +1,8 @@
-// src/components/SignupForm.jsx
 import React, { useState } from 'react';
 import './SignupForm.css';
 
 const SignupForm = () => {
-  // Initial form state
+
   const initialFormState = {
     name: '',
     email: '',
@@ -18,14 +17,14 @@ const SignupForm = () => {
     confirmPassword: ''
   };
 
-  // Form states
+  
   const [formData, setFormData] = useState(initialFormState);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState({ type: '', text: '' });
   const [currentStep, setCurrentStep] = useState(1);
 
-  // Bangladesh divisions and their districts
+  
   const divisionDistricts = {
     'Dhaka': ['Dhaka', 'Gazipur', 'Narayanganj', 'Tangail', 'Narsingdi', 'Munshiganj', 'Manikganj', 'Faridpur', 'Madaripur', 'Shariatpur', 'Rajbari', 'Gopalganj', 'Kishoreganj'],
     'Chittagong': ['Chittagong', 'Cox\'s Bazar', 'Bandarban', 'Khagrachari', 'Rangamati', 'Comilla', 'Chandpur', 'Lakshmipur', 'Noakhali', 'Feni', 'Brahmanbaria'],
@@ -491,7 +490,13 @@ const SignupForm = () => {
   };
 
   return (
+    <div className='container'>
     <div className="signup-container">
+            {/* Header */}
+            <header className="app-header">
+        <h1>Bangladesh Citizen Portal</h1>
+        <p>National Registration System</p>
+      </header>
       <div className="signup-header">
         <h1>Citizen Registration</h1>
         <div className="progress-indicator">
@@ -521,6 +526,7 @@ const SignupForm = () => {
       <form className="signup-form" onSubmit={handleSubmit}>
         {renderFormStep()}
       </form>
+    </div>
     </div>
   );
 };
