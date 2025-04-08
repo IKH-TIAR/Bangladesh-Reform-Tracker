@@ -24,7 +24,7 @@
     margin: 10px 0;
     color: #3498db;
   }
-  
+
   .stat-number.pending {
     color: #f39c12;
   }
@@ -57,4 +57,17 @@
     font-size: 16px;
   }
   
-  
+
+@media (max-width: 768px) {
+    .stats-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .action-buttons {
+      flex-direction: column;
+    }
+    
+    .action-buttons .btn {
+      width: 100%;
+    }
+  }
