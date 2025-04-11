@@ -1,0 +1,190 @@
+/* LoginForm.css */
+
+.login-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .app-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #006400; /* Dark green for Bangladesh theme */
+  }
+  
+  .app-header h1 {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
+  
+  .app-header p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .login-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .login-header h1 {
+    color: #006400;
+    margin-bottom: 15px;
+  }
+  
+  .login-form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  .form-group input:focus {
+    border-color: #006400;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 100, 0, 0.1);
+  }
+  
+  .form-group input.error {
+    border-color: #dc3545;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+  }
+  
+  .login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+  }
+  
+  .remember-me input {
+    margin-right: 8px;
+  }
+  
+  .forgot-password-link {
+    color: #006400;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .forgot-password-link:hover {
+    text-decoration: underline;
+  }
+  
+  .form-buttons {
+    margin-top: 25px;
+    text-align: center;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-success {
+    background-color: #006400;
+    color: #fff;
+    width: 100%;
+  }
+  
+  .btn-success:hover {
+    background-color: #004d00;
+  }
+  
+  .btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .message {
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  .message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+  .signup-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+  }
+  
+  .signup-link a {
+    color: #006400;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .login-container {
+      max-width: 100%;
+      padding: 15px;
+      margin: 0 10px;
+    }
+    
+    .login-header h1 {
+      font-size: 24px;
+    }
+    
+    .form-group input {
+      padding: 10px;
+    }
+    
+    .btn {
+      padding: 10px 20px;
+    }
+  }
