@@ -1,0 +1,242 @@
+.survey-summary {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .summary-header {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .summary-header h1 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+  }
+  
+  .survey-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .summary-meta {
+    display: flex;
+    gap: 2rem;
+    color: #6c757d;
+    font-size: 0.95rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+  }
+  
+  .meta-label {
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  .meta-value {
+    color: #333;
+  }
+  
+  .questions-summary {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+  }
+  
+  .questions-summary h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+  }
+  
+  .question-summary-card {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .question-summary-card:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  .question-summary-card h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .question-stats {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .stat {
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+  
+  .stat-value {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Charts and visualizations */
+  .chart {
+    margin-top: 1.5rem;
+  }
+  
+  /* Bar chart for multiple choice */
+  .bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .bar-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .bar-label {
+    min-width: 150px;
+    color: #333;
+  }
+  
+  .bar-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    height: 30px;
+    position: relative;
+  }
+  
+  .bar {
+    height: 100%;
+    background-color: #0066cc;
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+  }
+  
+  .bar-value {
+    position: absolute;
+    left: 10px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: bold;
+    mix-blend-mode: difference;
+  }
+  
+  /* Rating visualization */
+  .rating-summary {
+    margin-top: 1.5rem;
+  }
+  
+  .average-rating {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .rating-label {
+    color: #6c757d;
+    margin-right: 0.5rem;
+  }
+  
+  .rating-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #0066cc;
+  }
+  
+  .rating-distribution {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .rating-bar-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .rating-number {
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .rating-bar-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    height: 20px;
+    position: relative;
+  }
+  
+  .rating-bar {
+    height: 100%;
+    background-color: #0066cc;
+    border-radius: 4px;
+    transition: width 1s ease-in-out;
+  }
+  
+  .rating-count {
+    position: absolute;
+    left: 10px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: bold;
+    mix-blend-mode: difference;
+  }
+  
+  .open-ended-summary {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+  }
+  
+  .loading, .error {
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 1.2rem;
+  }
+  
+  .error {
+    color: #dc3545;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .summary-meta {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .bar-container {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.3rem;
+    }
+    
+    .bar-label {
+      min-width: auto;
+    }
+  }
