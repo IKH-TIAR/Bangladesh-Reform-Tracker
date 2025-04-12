@@ -27,7 +27,6 @@ const SignupForm = () => {
   const [formData, setFormData] = useState(initialFormState);
   const [errors, setErrors] = useState({});
 
-  // Division and District Data
   const divisionDistricts = {
     Dhaka: [
       "Dhaka",
@@ -101,24 +100,21 @@ const SignupForm = () => {
     Mymensingh: ["Mymensingh", "Jamalpur", "Sherpur", "Netrokona"],
   };
 
-  // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    // Clear specific error when user starts typing
     if (errors[name]) {
       setErrors({ ...errors, [name]: "" });
     }
   };
 
-  // Handle division change to update district options
   const handleDivisionChange = (e) => {
     const division = e.target.value;
     setFormData({
       ...formData,
       division,
-      district: "", // Reset district when division changes
+      district: "",
     });
 
     if (errors.division) {
@@ -126,11 +122,9 @@ const SignupForm = () => {
     }
   };
 
-  // Validate form data
   const validateForm = (step) => {
     const newErrors = {};
 
-    // Step 1 validation (Personal Information)
     if (step === 1) {
       if (!formData.name.trim()) {
         newErrors.name = "Name is required";
@@ -167,7 +161,6 @@ const SignupForm = () => {
       }
     }
 
-    // Step 2 validation (Contact Information)
     if (step === 2) {
       if (!formData.phone.trim()) {
         newErrors.phone = "Phone number is required";
@@ -190,7 +183,6 @@ const SignupForm = () => {
       }
     }
 
-    // Step 3 validation (Security Information)
     if (step === 3) {
       if (!formData.password) {
         newErrors.password = "Password is required";
@@ -215,7 +207,6 @@ const SignupForm = () => {
     return newErrors;
   };
 
-  // Handle next step button
   const handleNextStep = () => {
     const stepErrors = validateForm(currentStep);
 
@@ -226,27 +217,24 @@ const SignupForm = () => {
     }
   };
 
-  // Handle previous step button
   const handlePrevStep = () => {
     setCurrentStep(currentStep - 1);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    // Validate all form data before submission
+
     const stepErrors = validateForm(currentStep);
-  
+
     if (Object.keys(stepErrors).length > 0) {
       setErrors(stepErrors);
       return;
     }
-  
+
     setIsSubmitting(true);
     setSubmitMessage({ type: "", text: "" });
-  
+
     try {
-      // Make API call to register
       const response = await axios.post(
         "http://localhost:5000/api/users/signup",
         {
@@ -263,40 +251,32 @@ const SignupForm = () => {
           address: formData.address,
         }
       );
-  
-      // Show success message
+
       setSubmitMessage({
         type: "success",
         text: "Registration successful! Please check your email for verification.",
       });
-  
-      // Reset form
+
       setFormData(initialFormState);
       setCurrentStep(1);
-  
-      // Important: Don't set the user here since we're redirecting to login
-      // Instead, clear any existing user data
-      localStorage.removeItem('user');
+
+      localStorage.removeItem("user");
       setUser(null);
-  
-      // Redirect to login after short delay
+
       setTimeout(() => {
         navigate("/login");
       }, 2000);
     } catch (err) {
-      // Error handling code remains the same
       if (
         err.response?.data?.errors &&
         Array.isArray(err.response.data.errors)
       ) {
-        // Handle validation errors from server
         const serverErrors = {};
         err.response.data.errors.forEach((error) => {
           serverErrors[error.field] = error.message;
         });
         setErrors(serverErrors);
       } else {
-        // General error message
         setSubmitMessage({
           type: "error",
           text:
@@ -310,7 +290,6 @@ const SignupForm = () => {
     }
   };
 
-  // Render different form steps
   const renderFormStep = () => {
     switch (currentStep) {
       case 1:

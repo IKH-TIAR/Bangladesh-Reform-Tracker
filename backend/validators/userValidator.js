@@ -1,7 +1,7 @@
-// validators/userValidator.js - Validation for user data
+
 const { body, validationResult } = require('express-validator');
 
-// Set of validators for user signup
+
 const validateUserSignup = [
   body('name')
     .trim()
@@ -72,7 +72,7 @@ const validateUserSignup = [
     })
 ];
 
-// Middleware to check validation results
+
 const handleValidationErrors = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {

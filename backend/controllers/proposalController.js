@@ -1,6 +1,6 @@
 const Proposal = require('../models/Proposal');
 
-// Get all accepted proposals
+
 exports.getAcceptedProposals = async (req, res) => {
   try {
     const proposals = await Proposal.find({ status: 'accepted' })
@@ -13,7 +13,7 @@ exports.getAcceptedProposals = async (req, res) => {
   }
 };
 
-// Get a single proposal by ID
+
 exports.getProposalById = async (req, res) => {
   try {
     const proposal = await Proposal.findById(req.params.id);
@@ -29,20 +29,20 @@ exports.getProposalById = async (req, res) => {
   }
 };
 
-// Get limited information about accepted proposals for public view
+
 exports.getPublicProposals = async (req, res) => {
   try {
     const proposals = await Proposal.find({ status: 'accepted' })
       .select('title description submittedBy submissionDate progress milestones')
       .sort({ submissionDate: -1 })
-      .limit(6); // Limiting to 6 most recent reforms for the public page
+      .limit(6); 
     
-    // For each proposal, calculate the number of completed milestones
+    
     const publicProposals = proposals.map(proposal => {
       const completedMilestones = proposal.milestones.filter(m => m.completed).length;
       const totalMilestones = proposal.milestones.length;
       
-      // Return a formatted version with just the essential data
+      
       return {
         _id: proposal._id,
         title: proposal.title,

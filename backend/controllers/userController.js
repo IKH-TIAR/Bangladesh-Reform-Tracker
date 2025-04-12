@@ -1,8 +1,8 @@
-// controllers/userController.js - User-related business logic
+
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
-// Generate JWT Token
+
 const generateToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
     expiresIn: '30d'
@@ -27,7 +27,7 @@ const registerUser = async (req, res) => {
       password
     } = req.body;
 
-    // Check if user already exists by email or NID
+    
     const userExistsByEmail = await User.findOne({ email });
     if (userExistsByEmail) {
       return res.status(400).json({
@@ -44,7 +44,7 @@ const registerUser = async (req, res) => {
       });
     }
 
-    // Create new user
+    
     const user = await User.create({
       name,
       email,
@@ -59,7 +59,7 @@ const registerUser = async (req, res) => {
     });
 
     if (user) {
-      // In a real application, you would send a verification email here
+      
       res.status(201).json({
         success: true,
         message: 'User registered successfully. Please verify your email.',
@@ -94,7 +94,7 @@ const verifyUserExists = async (req, res) => {
   try {
     const { email, nid } = req.body;
     
-    // Check if required fields are provided
+    
     if (!email && !nid) {
       return res.status(400).json({
         success: false,
@@ -102,7 +102,7 @@ const verifyUserExists = async (req, res) => {
       });
     }
 
-    // Check by email if provided
+    
     if (email) {
       const userByEmail = await User.findOne({ email });
       if (userByEmail) {
@@ -114,7 +114,7 @@ const verifyUserExists = async (req, res) => {
       }
     }
 
-    // Check by NID if provided
+    
     if (nid) {
       const userByNID = await User.findOne({ nid });
       if (userByNID) {
@@ -126,7 +126,7 @@ const verifyUserExists = async (req, res) => {
       }
     }
 
-    // If we get here, no user exists with the provided credentials
+    
     res.status(200).json({
       success: true,
       exists: false
