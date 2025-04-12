@@ -1,0 +1,137 @@
+.view-surveys {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .view-surveys h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .search-container {
+    margin-bottom: 2rem;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+  }
+  
+  .surveys-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .survey-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+  }
+  
+  .survey-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .survey-card h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #333;
+    font-size: 1.5rem;
+  }
+  
+  .survey-description {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+  }
+  
+  .survey-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  .survey-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    flex: 1;
+  }
+  
+  .btn-view {
+    background-color: #0066cc;
+    color: white;
+  }
+  
+  .btn-view:hover {
+    background-color: #004c99;
+  }
+  
+  .btn-delete {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .btn-delete:hover {
+    background-color: #c82333;
+  }
+  
+  .btn-create {
+    background-color: #0066cc;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    display: inline-block;
+  }
+  
+  .no-surveys {
+    text-align: center;
+    padding: 3rem 0;
+  }
+  
+  .no-surveys p {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 1.2rem;
+    color: #6c757d;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .surveys-grid {
+      grid-template-columns: 1fr;
+    }
+  }
